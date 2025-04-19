@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+/* Hộp cảm ơn */
+.thank-you-container {
+    text-align: center;
+}
+
+.thank-you-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+    color: #d63384;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    color: #444;
+}
+
+/* Nút quay lại trang chủ */
+.back-home {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    background: #ff5e78;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.back-home:hover {
+    background: #e04a63;
+}
+
+/* Hiệu ứng fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #dc3545, #a71d2a);
+    padding: 15px 0;
+    text-align: center;
+    color: white;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    font-size: 16px;
+    margin-top: 5%;
+}

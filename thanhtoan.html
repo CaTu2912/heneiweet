@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán - Sweet Treats</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-danger p-3">
+            <div class="container">
+                <a class="navbar-brand text-white fw-bold" href="#">Sweet Treats</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <form class="d-flex ms-auto me-3" onsubmit="searchProducts(event)">
+                        <input class="form-control me-2" type="search" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+                        <button class="btn btn-light" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                                
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link text-white" href="./index.html">Trang chủ</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="productsDropdown" data-bs-toggle="dropdown">Sản phẩm</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./banh.html">Bánh</a></li>
+                                <li><a class="dropdown-item" href="./keo.html">Kẹo</a></li>
+                                <li><a class="dropdown-item" href="#">Socola</a></li>
+                                <li><a class="dropdown-item" href="#">Trái cây sấy</a></li>
+                                <li><a class="dropdown-item" href="#">Khoai tây</a></li>
+                            </ul>
+                        </li>
+                        <li id="addToCartRandom" class="nav-item"><a class="nav-link text-white" href="./giohang.html"><i class="bi bi-cart3"></i></a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <div class="container mt-5">
+        <h2 class="text-center text-danger">Thanh Toán</h2>
+        <h3 class="mt-4">Thông tin đơn hàng</h3>
+        <table class="table table-bordered text-center" id="checkoutTable">
+            <thead class="table-dark">
+                <tr>
+                    <th>Ảnh</th>
+                    <th>Sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Tổng</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h3 class="mt-3">Tổng tiền: <span id="finalPrice" class="fw-bold text-danger"></span></h3>
+
+        <h3 class="mt-4">Thông tin khách hàng</h3>
+        <form id="customerForm">
+            <div class="mb-3">
+                <label class="form-label">Họ và tên</label>
+                <input type="text" class="form-control" id="fullName" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Số điện thoại</label>
+                <input type="tel" class="form-control" id="phoneNumber" pattern="\d{10}" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Địa chỉ</label>
+                <input type="text" class="form-control" id="address" required>
+            </div>
+        </form>
+
+        <h3 class="mt-4">Chọn phương thức thanh toán</h3>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="payment" value="VNPay" id="vnpay">
+            <label class="form-check-label" for="vnpay">Thanh toán qua VNPay</label>
+        </div>
+        
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="payment" value="Thanh toán khi nhận hàng" id="cod">
+            <label class="form-check-label" for="cod">Thanh toán khi nhận hàng (COD)</label>
+        </div>
+
+        <button class="btn btn-success mt-3" id="confirmOrderBtn">Xác nhận đơn hàng</button>
+    </div>
+    
+
+    <!-- Footer -->
+    <footer class="text-center py-3 bg-danger text-white">
+        <div class="container">
+            <p>&copy; Henei Sweet.</p>
+            <p>Địa chỉ: An Hòa, Ninh Kiều, Cần Thơ</p>
+            <p>Điện thoại: <a href="tel:0987456123" class="text-white">0987.456.123</a></p>
+            <p>Email: <a href="mailto:henei@sweet.vn" class="text-white">henei@sweet.vn</a></p>
+            <p>
+                <a href="https://www.facebook.com/henei.sweet" class="text-white me-3" target="_blank">
+                    <i class="fa-brands fa-facebook"></i> Facebook
+                </a>
+                <a href="https://www.instagram.com/henei.sweet" class="text-white" target="_blank">
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+    let tbody = document.querySelector("#checkoutTable tbody");
+
+    function formatPrice(price) {
+        return price.toLocaleString("vi-VN").replace(/,/g, ".") + ".000đ";
+    }
+
+    function renderCart() {
+        tbody.innerHTML = "";
+        let totalPrice = 0;
+
+        if (cartData.length === 0) {
+            tbody.innerHTML = "<tr><td colspan='5'>Giỏ hàng trống!</td></tr>";
+        } else {
+            cartData.forEach(item => {
+                let row = `<tr>
+                    <td><img src="${item.img}" width="80"></td>
+                    <td>${item.name}</td>
+                    <td>${formatPrice(item.price)}</td>
+                    <td>${item.quantity}</td>
+                    <td><strong>${formatPrice(item.price * item.quantity)}</strong></td>
+                </tr>`;
+                tbody.innerHTML += row;
+                totalPrice += item.price * item.quantity;
+            });
+        }
+        document.getElementById("finalPrice").innerText = formatPrice(totalPrice);
+    }
+
+    renderCart();
+
+
+            document.getElementById("confirmOrderBtn").addEventListener("click", function () {
+                let fullName = document.getElementById("fullName").value.trim();
+                let phoneNumber = document.getElementById("phoneNumber").value.trim();
+                let address = document.getElementById("address").value.trim();
+                let selectedPayment = document.querySelector("input[name='payment']:checked");
+
+                if (!fullName || !phoneNumber || !address || !selectedPayment) {
+                    alert("Vui lòng nhập đầy đủ thông tin và chọn phương thức thanh toán!");
+                    return;
+                }
+
+                if (selectedPayment.value === "VNPay") {
+                    let vnpayUrl = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html" +
+                        "?vnp_Amount=1000000" +
+                        "&vnp_Command=pay" +
+                        "&vnp_TmnCode=YOUR_TMNCODE" +
+                        "&vnp_TxnRef=" + Math.floor(Math.random() * 1000000) +
+                        "&vnp_OrderInfo=ThanhToanDonHang" +
+                        "&vnp_Locale=vn" +
+                        "&vnp_ReturnUrl=https://yourwebsite.com/thankyou.html";
+
+                    window.location.href = vnpayUrl;
+                } else {
+                    alert("Bạn đã chọn Thanh toán khi nhận hàng (COD). Đơn hàng đang được xử lý!");
+                    localStorage.removeItem("cart");
+                    window.location.href = "camon.html";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

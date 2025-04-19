@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Mục Kẹo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger p-3">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold" href="#">Sweet Treats</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <form class="d-flex ms-auto me-3">
+                    <input class="form-control me-2" type="search" placeholder="Tìm kiếm sản phẩm...">
+                    <button class="btn btn-light" type="submit">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>              
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="./index.html">Trang chủ</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="productsDropdown" data-bs-toggle="dropdown">Sản phẩm</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./banh.html">Bánh</a></li>
+                            <li><a class="dropdown-item" href="./keo.html">Kẹo</a></li>
+                            <li><a class="dropdown-item" href="#">Socola</a></li>
+                            <li><a class="dropdown-item" href="#">Trái cây sấy</a></li>
+                            <li><a class="dropdown-item" href="#">Khoai tây</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-white" href="./giohang.html"><i class="bi bi-cart3"></i></a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-danger text-white text-center py-3">
+        <h1>Danh Mục Kẹo</h1>
+    </header>
+
+    <div class="container py-5">
+        <div class="row mb-4">
+            <!-- Sản phẩm 1 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./img/mto.jpg" class="card-img-top" alt="Kẹo Mentos">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Kẹo Mentos</h5>
+                        <p class="text-danger fw-bold">30.000đ</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-outline-danger">Xem chi tiết</button>
+                            <button class="btn btn-danger"><i class="bi bi-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sản phẩm 2 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./img/ctau.jpg" class="card-img-top" alt="Kẹo Cay Fisherman's Friend">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Kẹo cay con tàu không đường Fisherman's Friend</h5>
+                        <p class="text-danger fw-bold">23.000đ</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-outline-danger">Xem chi tiết</button>
+                            <button class="btn btn-danger"><i class="bi bi-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sản phẩm 3 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./img/play.jpg" class="card-img-top" alt="Kẹo Playmore">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Kẹo Playmore</h5>
+                        <p class="text-danger fw-bold">28.000đ</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-outline-danger">Xem chi tiết</button>
+                            <button class="btn btn-danger"><i class="bi bi-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./img/cfe.jpg" class="card-img-top" alt="KẸO CÀ PHÊ KHÔNG ĐƯỜNG ">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">KẸO CÀ PHÊ KHÔNG ĐƯỜNG </h5>
+                        <p class="text-danger fw-bold">28.000đ</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-outline-danger">Xem chi tiết</button>
+                            <button class="btn btn-danger"><i class="bi bi-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./img/nougat.jpg" class="card-img-top" alt="kẹo Nougat (kẹo hạnh phúc) ">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">kẹo Nougat (kẹo hạnh phúc) </h5>
+                        <p class="text-danger fw-bold">58.000đ</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-outline-danger">Xem chi tiết</button>
+                            <button class="btn btn-danger"><i class="bi bi-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./img/Alpen.jpg" class="card-img-top" alt="Kẹo Alpenliebe ">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Kẹo Alpenliebe</h5>
+                        <p class="text-danger fw-bold">38.000đ</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <button class="btn btn-outline-danger">Xem chi tiết</button>
+                            <button class="btn btn-danger"><i class="bi bi-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-3 bg-danger text-white">
+        <div class="container">
+            <p>&copy; Henei Sweet.</p>
+            <p>Địa chỉ: An Hòa, Ninh Kiều, Cần Thơ</p>
+            <p>Điện thoại: <a href="tel:0987456123" class="text-white">0987.456.123</a></p>
+            <p>Email: <a href="mailto:henei@sweet.vn" class="text-white">henei@sweet.vn</a></p>
+            <p>
+                <a href="https://www.facebook.com/henei.sweet" class="text-white me-3" target="_blank">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </a>
+                <a href="https://www.instagram.com/henei.sweet" class="text-white" target="_blank">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Thêm link Font Awesome để hiển thị icon -->
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
+            var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+                return new bootstrap.Dropdown(dropdownToggleEl);
+            });
+        });
+        </script>
+        <script>
+            function searchProducts(event) {
+                event.preventDefault(); // Ngăn chặn reload trang khi submit form
+            
+                let keyword = document.getElementById("searchInput").value.toLowerCase().trim();
+                let productCards = document.querySelectorAll(".card"); // Chọn tất cả sản phẩm
+                let found = false;
+            
+                productCards.forEach(card => {
+                    let productName = card.querySelector(".card-title").innerText.toLowerCase();
+                    
+                    if (productName.includes(keyword)) {
+                        card.style.display = "block"; // Hiển thị sản phẩm phù hợp
+                        found = true;
+                    } else {
+                        card.style.display = "none"; // Ẩn sản phẩm không phù hợp
+                    }
+                });
+            
+                // Hiển thị thông báo nếu không tìm thấy sản phẩm nào
+                let productSection = document.querySelector(".container");
+                let noResultMessage = document.getElementById("noResultMessage");
+            
+                if (!found) {
+                    if (!noResultMessage) {
+                        noResultMessage = document.createElement("p");
+                        noResultMessage.id = "noResultMessage";
+                        noResultMessage.className = "text-center text-danger fw-bold";
+                        noResultMessage.innerText = "Không tìm thấy sản phẩm nào.";
+                        productSection.appendChild(noResultMessage);
+                    }
+                } else {
+                    if (noResultMessage) {
+                        noResultMessage.remove();
+                    }
+                }
+            }
+            </script>
+    
+    <script>
+    function searchProducts(event) {
+        event.preventDefault(); // Ngăn chặn reload trang khi submit form
+    
+        let keyword = document.getElementById("searchInput").value.toLowerCase().trim();
+        let productCards = document.querySelectorAll(".card"); // Chọn tất cả sản phẩm
+        let found = false;
+    
+        productCards.forEach(card => {
+            let productName = card.querySelector(".card-title").innerText.toLowerCase();
+    
+            if (productName.includes(keyword)) {
+                card.style.display = "block"; // Hiển thị sản phẩm phù hợp
+                found = true;
+            } else {
+                card.style.display = "none"; // Ẩn sản phẩm không phù hợp
+            }
+        });
+    
+        // Hiển thị thông báo nếu không tìm thấy sản phẩm nào
+        let productSection = document.querySelector(".container");
+        let noResultMessage = document.getElementById("noResultMessage");
+    
+        if (!found) {
+            if (!noResultMessage) {
+                noResultMessage = document.createElement("p");
+                noResultMessage.id = "noResultMessage";
+                noResultMessage.className = "text-center text-danger fw-bold";
+                noResultMessage.innerText = "Không tìm thấy sản phẩm nào.";
+                productSection.appendChild(noResultMessage);
+            }
+        } else {
+            if (noResultMessage) {
+                noResultMessage.remove();
+            }
+        }
+    }
+    
+    </script> 
+</body>
+</html>

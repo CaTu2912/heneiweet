@@ -1,0 +1,80 @@
+/* ===== Ảnh sản phẩm chính ===== */
+#mainImage {
+    width: 100%; /* Đảm bảo ảnh chính chiếm toàn bộ chiều rộng */
+    max-height: 400px; /* Giới hạn chiều cao ảnh */
+    object-fit: cover; /* Cắt ảnh vừa với khung mà không méo */
+}
+
+#mainImage:hover {
+    transform: scale(1.05);
+}
+
+/* ===== Thumbnail ảnh nhỏ ===== */
+.thumbnail {
+    cursor: pointer;
+    object-fit: cover; /* Cắt ảnh vừa với khung mà không méo */
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+.thumbnail:hover, .thumbnail:focus {
+    border: 2px solid #dc3545;
+    transform: scale(1.1);
+}
+
+/* ===== Nút thêm vào giỏ hàng ===== */
+/* ===== Phần nhập số lượng & nút giỏ hàng ===== */
+.d-flex {
+    align-items: center;
+}
+
+/* Tùy chỉnh input số lượng */
+.form-control {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border: 2px solid #dc3545;
+    border-radius: 8px;
+    width: 180px;
+    transition: all 0.3s ease-in-out;
+}
+.form-control:focus {
+    border-color: #b02a37;
+    box-shadow: 0px 0px 5px rgba(220, 53, 69, 0.5);
+}
+
+/* Nút giỏ hàng */
+.btn-danger {
+    background-color: #dc3545;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+.btn-danger:hover {
+    background-color: #b02a37;
+    transform: scale(1.05);
+}
+
+/* Icon trong nút */
+.btn-danger i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease-in-out;
+}
+.btn-danger:hover i {
+    transform: rotate(10deg);
+}
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #dc3545, #a71d2a);
+    padding: 15px 0;
+    text-align: center;
+    color: white;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    font-size: 16px;
+    margin-top: 5%;
+}

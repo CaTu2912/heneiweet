@@ -1,0 +1,411 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset mặc định */
+/* Đảm bảo body và html có chiều cao 100% */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+}
+.navbar-brand img {
+    border-radius: 50%; /* Bo tròn ảnh */
+    width: 40px; /* Đảm bảo kích thước phù hợp */
+    height: 40px;
+    object-fit: cover; /* Giữ tỉ lệ ảnh */
+    border: 2px solid white; /* Viền trắng nhẹ */
+}
+
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.navbar .nav-link {
+    transition: color 0.3s ease;
+}
+.navbar .nav-link:hover {
+    color: #ffeb3b !important;
+}
+/* Tùy chỉnh ô nhập tìm kiếm */
+.navbar .form-control {
+    width: 250px; /* Độ rộng của ô tìm kiếm */
+    border-radius: 20px; /* Bo góc mềm mại */
+    border: 2px solid #ff4d4d; /* Viền đỏ nổi bật */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Khi ô tìm kiếm được focus */
+.navbar .form-control:focus {
+    border-color: #d63031; /* Đổi màu viền khi focus */
+    box-shadow: 0 0 8px rgba(214, 48, 49, 0.5);
+}
+
+/* Tùy chỉnh nút tìm kiếm */
+.navbar .btn-light {
+    border-radius: 50%; /* Làm nút tròn */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Hiệu ứng hover cho nút */
+.navbar .btn-light:hover {
+    background-color: #ff4d4d; /* Đổi màu nền khi hover */
+    color: white;
+}
+
+/* Hiệu ứng khi nhấn vào nút */
+.navbar .btn-light:active {
+    transform: scale(0.95);
+}
+
+
+/* Hero Section */
+header {
+    background: linear-gradient(135deg, #dc3545, #a71d2a);
+    padding: 80px 20px;
+    text-align: center;
+}
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Danh mục sản phẩm */
+.container h2 {
+    font-weight: 600;
+    color: #dc3545;
+}
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%; /* Đảm bảo các card có cùng chiều cao */
+    display: flex;
+    flex-direction: column;
+}
+.card-img-top {
+    height: 200px; /* Đặt kích thước cố định cho hình ảnh */
+    object-fit: cover; /* Cắt ảnh để vừa với kích thước */
+}
+.card-body {
+    flex-grow: 1; /* Để nội dung card mở rộng linh hoạt */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    min-height: 50px; /* Đảm bảo tiêu đề không làm card bị lệch */
+
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.card .btn-danger, 
+.card .btn-outline-danger {
+    background-color: #e1c8c839;
+    border: 2px solid #a71d2a; /* Viền đỏ đậm */
+    border-radius: 20px; /* Bo tròn góc */
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.card .btn-danger:hover, 
+.card .btn-outline-danger:hover {
+    background-color: #ab1625;
+    color: white;
+    transform: scale(1.05); /* Hiệu ứng phóng to nhẹ */
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* Khoảng cách giữa các nút */
+}
+
+.custom-btn {
+    width: 120px; /* Độ rộng cố định cho cả hai nút */
+    font-size: 14px; /* Kích thước chữ nhỏ hơn */
+    padding: 6px 10px; /* Giảm kích thước nút */
+    text-align: center;
+    border-radius: 20px; /* Bo góc */
+}
+.card .btn-danger i {
+    color: black; /* Màu đen cho icon */
+    font-weight: bold;
+
+}
+
+.card .btn-danger:hover i {
+    color: white; /* Khi hover, icon đổi màu trắng */
+}
+
+
+.custom-btn {
+    width: 120px; /* Độ rộng cố định cho cả hai nút */
+    font-size: 14px; /* Kích thước chữ nhỏ hơn */
+    padding: 6px 10px; /* Giảm kích thước nút */
+    text-align: center;
+}
+
+.row .col-md-4 {
+    margin-bottom: 20px; /* Tạo khoảng cách giữa các hàng */
+}
+.row {
+    row-gap: 30px; /* Khoảng cách giữa các hàng */
+}
+
+.container {
+    flex: 1;
+}
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #dc3545, #a71d2a);
+    padding: 15px 0;
+    text-align: center;
+    color: white;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    font-size: 16px;
+    margin-top: 5%;
+}
+/* Định dạng dropdown menu */
+.dropdown-menu {
+    background-color: #fff; /* Màu nền */
+    border-radius: 8px; /* Bo góc */
+    border: none; /* Loại bỏ viền */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng */
+}
+
+/* Màu nền cho các mục trong dropdown */
+.dropdown-item {    
+    color: #333;
+    padding: 10px 15px;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Khi di chuột vào mục trong dropdown */
+.dropdown-item:hover {
+    background-color: #637591dd; /* Màu nền khi hover */
+    color: white;
+}
+
+/* Định dạng lại tiêu đề dropdown */
+.navbar .dropdown-toggle {
+    cursor: pointer;
+}
+
+/* Hiển thị dropdown khi hover (nếu muốn) */
+.navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+/* Kiểu dáng cho modal */
+.modal {
+    display: none; /* Ẩn mặc định */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Làm mờ nền */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Kiểu dáng cho modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Nội dung modal */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Container cho tích xanh */
+.checkmark-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* Vòng tròn chứa dấu tích */
+.checkmark-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #28a745;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: pop-up 0.5s ease-out;
+}
+
+/* Dấu tích */
+.checkmark {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    opacity: 0;
+    animation: fade-in 0.8s ease-in forwards 0.3s;
+}
+
+/* Animation xuất hiện */
+@keyframes pop-up {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animation làm hiện dấu tích */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Nút bấm */
+.modal-buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal-buttons button:nth-child(1) {
+    background: #007bff;
+    color: white;
+}
+
+.modal-buttons button:nth-child(2) {
+    background: #28a745;
+    color: white;
+}
+
+
+
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar .navbar-brand {
+        font-size: 1.2rem; /* Thu nhỏ logo */
+    }
+    .navbar .nav-link {
+        font-size: 14px;
+    }
+    .navbar-toggler {
+        border: none; /* Ẩn viền nút menu */
+    }
+    /* Hero Section */
+    header {
+        padding: 60px 15px;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    /* Điều chỉnh khoảng cách giữa các phần */
+    .container {
+        padding: 15px;
+    }
+    /* Điều chỉnh kích thước sản phẩm */
+    .card-title {
+        font-size: 16px;
+    }
+
+    .card-body p {
+        font-size: 14px;
+    }
+    /* Điều chỉnh layout hiển thị 1 card trên mobile */
+    .row {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 15px;
+        padding-bottom: 10px;
+        scrollbar-width: none; /* Ẩn thanh cuộn trên Firefox */
+        -ms-overflow-style: none; /* Ẩn thanh cuộn trên IE/Edge */
+    }
+    
+    /* Ẩn thanh cuộn trên Chrome, Safari */
+    .row::-webkit-scrollbar {
+        display: none;
+    }
+
+    .col-md-4 {
+        flex: 0 0 90%; /* Mỗi card chiếm 90% màn hình */
+        max-width: 90%;
+        scroll-snap-align: start;
+    }
+
+    /* Điều chỉnh card */
+    .card {
+        height: auto;
+    }
+    
+    .card-img-top {
+        height: 180px; /* Giảm chiều cao ảnh */
+    }
+
+    .card-title {
+        font-size: 1rem;
+        min-height: auto;
+    }
+
+    /* Điều chỉnh button */
+    .custom-btn {
+        width: 100px;
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+     /* Footer */
+     footer {
+        font-size: 14px; /* Chữ nhỏ hơn */
+        padding: 15px;
+    }
+}
